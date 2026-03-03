@@ -110,15 +110,18 @@ delivered   saved locally         pushed to GitHub
 
 ## Scheduling (Daily Automation)
 
-### macOS — launchd (recommended)
-See `INSTALLATION.md` for a complete launchd plist example that runs reliably at 7 AM every day.
+### GitHub Actions (recommended)
+The repository includes `.github/workflows/daily-digest.yml`, which runs `digest.py` on GitHub's servers every morning — no local machine required. Setup requires adding five repository secrets (API keys and email credentials) in your fork's Settings → Secrets.
 
-### Cross-platform — cron
+To trigger a digest manually at any time:
 ```bash
-crontab -e
-# Add:
-0 7 * * * /usr/bin/env python3 /path/to/digest.py >> ~/.daily_digest/digest.log 2>&1
+gh workflow run daily-digest.yml
 ```
+
+See `INSTALLATION.md → Step 6` for the full setup walkthrough, including secrets configuration and timezone adjustment.
+
+### Local schedule (macOS launchd / cron)
+See `INSTALLATION.md → Step 6` for launchd and cron instructions if you prefer to run the digest locally.
 
 ---
 

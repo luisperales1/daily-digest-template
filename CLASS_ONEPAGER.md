@@ -65,7 +65,7 @@ A personalized daily digest that:
 | 0:35 | Fill in your filter_config.json — your companies, sectors, geographies |
 | 0:45 | Run the digest for the first time, review the output |
 | 0:50 | Deploy the web archive to Netlify, enable subscribe form |
-| 0:55 | Set up the daily schedule (cron/launchd) |
+| 0:55 | Set up GitHub Actions — add repository secrets, test manual trigger |
 | 0:58 | Q&A and what to build next |
 
 ---
@@ -117,14 +117,14 @@ pip install -r requirements.txt
 # Run the one-time setup wizard
 python3 setup.py
 
-# Test your digest
+# Test your digest locally
 python3 digest.py
+
+# Trigger a digest run via GitHub Actions (from anywhere, any time)
+gh workflow run daily-digest.yml
 
 # Rebuild the site archive
 python3 build_site.py
-
-# Schedule daily run (macOS)
-# See INSTALLATION.md for launchd instructions
 ```
 
 ---

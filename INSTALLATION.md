@@ -149,7 +149,49 @@ This means your web archive updates automatically every day.
 
 ## Step 6: Schedule Daily Runs
 
-### macOS — launchd (recommended)
+### Option A — GitHub Actions (recommended)
+
+GitHub runs `digest.py` on its servers every morning. Your laptop can be off.
+
+#### 6a. Add your secrets to GitHub
+
+In your forked repository, go to **Settings → Secrets and variables → Actions → New repository secret** and add each of the following:
+
+| Secret name | Value |
+|---|---|
+| `READWISE_TOKEN` | Your Readwise API token |
+| `ANTHROPIC_API_KEY` | Your Anthropic API key |
+| `SMTP_SENDER_EMAIL` | Your Gmail address |
+| `SMTP_SENDER_PASSWORD` | Your Gmail App Password |
+| `SMTP_RECIPIENT_EMAIL` | Email address that receives the digest |
+
+#### 6b. The workflow is already included
+
+`.github/workflows/daily-digest.yml` is already in this repository. Once your secrets are added, GitHub Actions will run the digest automatically every day.
+
+#### 6c. Adjust the timezone (optional)
+
+The default schedule runs at noon UTC, which is **7 AM EST / 8 AM EDT**. To change it, edit `.github/workflows/daily-digest.yml` and update the cron line. Use [crontab.guru](https://crontab.guru) to find the right UTC time for your timezone.
+
+```yaml
+- cron: '0 12 * * *'  # noon UTC = 7 AM EST
+```
+
+#### 6d. Test it manually
+
+Trigger a digest run at any time from the terminal:
+
+```bash
+gh workflow run daily-digest.yml
+```
+
+Or go to your repository on GitHub → **Actions** → **Daily Digest** → **Run workflow**.
+
+---
+
+### Option B — macOS launchd (local machine)
+
+Use this if you prefer the digest to run locally rather than on GitHub's servers.
 
 Create the plist file:
 
@@ -186,17 +228,12 @@ EOF
 
 Replace `/FULL/PATH/TO/daily-digest/digest.py` and `YOUR_USERNAME` with your actual values.
 
-Load the job:
 ```bash
 launchctl load ~/Library/LaunchAgents/com.yourname.dailydigest.plist
+launchctl list | grep dailydigest  # verify it loaded
 ```
 
-Verify it loaded:
-```bash
-launchctl list | grep dailydigest
-```
-
-### Linux / VPS — cron
+### Option C — cron (Linux / VPS)
 
 ```bash
 crontab -e

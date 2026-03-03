@@ -1,0 +1,59 @@
+name: Daily Digest
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # 7 AM EST (UTC-5) — see README for timezone adjustment
+  workflow_dispatch:        # enables manual trigger via: gh workflow run daily-digest.yml
+
+permissions:
+  contents: write
+
+jobs:
+  run-digest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create config file from secrets
+        env:
+          READWISE_TOKEN: ${{ secrets.READWISE_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SMTP_SENDER_EMAIL: ${{ secrets.SMTP_SENDER_EMAIL }}
+          SMTP_SENDER_PASSWORD: ${{ secrets.SMTP_SENDER_PASSWORD }}
+          SMTP_RECIPIENT_EMAIL: ${{ secrets.SMTP_RECIPIENT_EMAIL }}
+        run: |
+          mkdir -p ~/.daily_digest
+          python3 << 'EOF'
+import json, os
+config = {
+    "readwise_token": os.environ["READWISE_TOKEN"],
+    "anthropic_api_key": os.environ["ANTHROPIC_API_KEY"],
+    "email": {
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587,
+        "sender_email": os.environ["SMTP_SENDER_EMAIL"],
+        "sender_password": os.environ["SMTP_SENDER_PASSWORD"],
+        "recipient_email": os.environ["SMTP_RECIPIENT_EMAIL"],
+    },
+}
+with open(os.path.expanduser("~/.daily_digest/config.json"), "w") as f:
+    json.dump(config, f)
+EOF
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run digest
+        run: python3 digest.py
