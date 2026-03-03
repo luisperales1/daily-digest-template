@@ -75,24 +75,29 @@ A personalized daily digest that:
 Each participant needs these accounts. Each takes 5–10 minutes.
 
 1. **Claude Code** — [claude.ai/claude-code](https://claude.ai/claude-code)
+   - *An AI assistant you talk to in plain English that writes, edits, and runs code on your computer — think of it as a software engineer you can direct through conversation.*
    - Download and install the CLI
    - Authenticate with your Anthropic account
 
 2. **Anthropic Console** — [console.anthropic.com](https://console.anthropic.com)
+   - *The control panel for Anthropic's AI — where you create the "API key" (a password) that lets your digest script call Claude on your behalf.*
    - Create an account
    - Go to Settings → API Keys → Create new key
    - Keep the key — you'll enter it in setup.py
 
 3. **Readwise Reader** — [readwise.io](https://readwise.io)
+   - *A reading app that collects everything you want to read — newsletters, articles, RSS feeds — into one place; it's the inbox your digest pulls from every morning.*
    - Create an account ($7.99/month, free trial available)
    - Go to readwise.io/access_token and copy your token
    - **Before the workshop: subscribe to at least 5 newsletters or save 5 articles** so the feed has content to work with
 
 4. **GitHub** — [github.com](https://github.com)
+   - *A website where developers store and share code — think of it as Google Drive for code, where your digest configuration and web archive live so Netlify can publish them automatically.*
    - Create an account
-   - Fork or clone the template repository: `github.com/[REPO_URL]`
+   - Fork the template repository: [github.com/cam39porter/daily-digest-template](https://github.com/cam39porter/daily-digest-template)
 
 5. **Netlify** — [netlify.com](https://netlify.com)
+   - *A free hosting service that turns your GitHub repository into a live website — it watches for updates and automatically republishes your web archive every time a new digest runs.*
    - Create an account (free tier is sufficient)
    - You'll connect it to GitHub during the workshop
 
@@ -162,5 +167,5 @@ Build tools that make your expertise more leverageable. That's the principle. To
 
 ---
 
-*Template repository: github.com/[YOUR-GITHUB]/daily-digest-template*
+*Template repository: [github.com/cam39porter/daily-digest-template](https://github.com/cam39porter/daily-digest-template)*
 *Built with Claude Code + Readwise Reader + Anthropic API + Netlify*
