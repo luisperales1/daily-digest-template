@@ -1,86 +1,72 @@
 {
-  "_instructions": "Fill in each section with your specific areas of interest. The digest will scan every article for relevance to these entities and include a dedicated 'Relevance' section when matches are found. Delete any categories you don't need. Add as many entries as you like.",
+  "digest_name": "Luis's Market Digest",
+  "author_name": "Luis Perales",
+  "focus_description": "Financial markets and energy markets, with a focus on oil and commodities",
 
-  "digest_name": "My Daily Digest",
-  "author_name": "Your Name",
-  "focus_description": "Brief description of your focus (e.g., 'Early-stage investor in climate tech and advanced manufacturing')",
-
-  "portfolio_companies": [
-    {
-      "_note": "Copy this object for each company. 'keywords' are terms that signal relevance in an article.",
-      "name": "Company Name",
-      "description": "One-sentence description of what they do",
-      "website": "company.com",
-      "contact_email": "founder@company.com",
-      "keywords": ["keyword1", "keyword2", "relevant technology", "market they serve"],
-      "competitors": ["competitor1", "competitor2"],
-      "stage": "Seed / Series A / etc."
-    }
-  ],
+  "portfolio_companies": [],
 
   "geographies": [
     {
-      "name": "Southeast Asia",
-      "keywords": ["Vietnam", "Indonesia", "Philippines", "Thailand", "ASEAN", "Southeast Asia"],
-      "why_relevant": "Explain why this geography matters to you"
+      "name": "United States",
+      "keywords": ["US economy", "Federal Reserve", "Fed", "Wall Street", "Treasury", "US GDP"],
+      "why_relevant": "Primary market focus"
     },
     {
-      "name": "US Midwest",
-      "keywords": ["Ohio", "Michigan", "Indiana", "Illinois", "Great Lakes", "Rust Belt", "reshoring"],
-      "why_relevant": "Explain why this geography matters to you"
+      "name": "Middle East / OPEC",
+      "keywords": ["OPEC", "OPEC+", "Saudi Arabia", "Saudi Aramco", "UAE", "Iraq", "Iran", "Middle East"],
+      "why_relevant": "Key oil producing region affecting energy prices"
     }
   ],
 
   "people": [
     {
-      "name": "Person Name",
-      "role": "Their role or why they matter",
-      "keywords": ["their name", "their company", "their fund"],
-      "why_relevant": "Why you track this person"
+      "name": "Jerome Powell",
+      "role": "Federal Reserve Chair",
+      "keywords": ["Jerome Powell", "Fed Chair", "Federal Reserve"],
+      "why_relevant": "Key figure in monetary policy affecting markets"
     }
   ],
 
   "industries_sectors": [
     {
-      "name": "Advanced Manufacturing",
-      "keywords": ["reshoring", "onshoring", "factory automation", "industrial robotics", "CNC", "additive manufacturing", "3D printing", "precision machining"],
-      "why_relevant": "Core investment thesis area"
+      "name": "Oil & Energy",
+      "keywords": ["crude oil", "Brent", "WTI", "oil prices", "petroleum", "natural gas", "LNG", "energy sector", "oil production", "drilling", "refinery", "shale", "Permian Basin", "oil demand", "oil supply", "barrel", "OPEC output"],
+      "why_relevant": "Core interest area"
     },
     {
-      "name": "Defense Technology",
-      "keywords": ["DoD", "DARPA", "defense procurement", "dual-use", "ITAR", "national security", "Pentagon budget", "defense contractor"],
-      "why_relevant": "Portfolio exposure in defense-adjacent companies"
+      "name": "Financial Markets",
+      "keywords": ["S&P 500", "Nasdaq", "Dow Jones", "stock market", "equities", "bonds", "Treasury yields", "interest rates", "IPO", "earnings", "Wall Street", "bull market", "bear market", "volatility", "VIX"],
+      "why_relevant": "Core interest area"
+    },
+    {
+      "name": "Commodities",
+      "keywords": ["commodities", "gold", "copper", "silver", "futures", "commodity prices", "raw materials"],
+      "why_relevant": "Adjacent to oil and energy interests"
     }
   ],
 
   "themes": [
     {
-      "name": "Deglobalization",
-      "keywords": ["supply chain", "decoupling", "friend-shoring", "tariff", "trade war", "domestic production", "made in USA"],
-      "why_relevant": "Macro thesis underlying multiple investments"
+      "name": "Monetary Policy & Interest Rates",
+      "keywords": ["rate cut", "rate hike", "inflation", "CPI", "PCE", "monetary policy", "quantitative tightening", "bond yields", "Fed meeting", "FOMC"],
+      "why_relevant": "Directly impacts financial markets and energy prices"
     },
     {
-      "name": "AI Infrastructure",
-      "keywords": ["GPU", "data center", "inference", "training compute", "NVIDIA", "AI hardware", "cloud infrastructure"],
-      "why_relevant": "Crosscutting theme affecting multiple portfolio companies"
+      "name": "Oil Supply & Demand Dynamics",
+      "keywords": ["OPEC cuts", "production cuts", "oil demand", "China demand", "supply glut", "strategic petroleum reserve", "SPR", "oil inventory", "refinery capacity"],
+      "why_relevant": "Core thesis for oil market analysis"
     }
   ],
 
   "priority_sources": [
-    "bloomberg.com",
-    "ft.com",
-    "wsj.com",
-    "semafor.com"
+    "bloomberg.com"
   ],
 
-  "priority_authors": [
-    "Author Name 1",
-    "Author Name 2"
-  ],
+  "priority_authors": [],
 
   "excluded_topics": [
-    "_note: Topics to explicitly de-prioritize or skip",
     "celebrity news",
-    "sports"
+    "sports",
+    "entertainment"
   ]
 }
