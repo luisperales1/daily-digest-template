@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.env
+
+# Credentials and local archive — never commit these
+# (they live in ~/.daily_digest/, not in the repo)
+# If you want to track digests.json in git for Netlify auto-deploy, remove the next line
+# site/data/digests.json

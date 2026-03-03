@@ -1,0 +1,86 @@
+{
+  "_instructions": "Fill in each section with your specific areas of interest. The digest will scan every article for relevance to these entities and include a dedicated 'Relevance' section when matches are found. Delete any categories you don't need. Add as many entries as you like.",
+
+  "digest_name": "My Daily Digest",
+  "author_name": "Your Name",
+  "focus_description": "Brief description of your focus (e.g., 'Early-stage investor in climate tech and advanced manufacturing')",
+
+  "portfolio_companies": [
+    {
+      "_note": "Copy this object for each company. 'keywords' are terms that signal relevance in an article.",
+      "name": "Company Name",
+      "description": "One-sentence description of what they do",
+      "website": "company.com",
+      "contact_email": "founder@company.com",
+      "keywords": ["keyword1", "keyword2", "relevant technology", "market they serve"],
+      "competitors": ["competitor1", "competitor2"],
+      "stage": "Seed / Series A / etc."
+    }
+  ],
+
+  "geographies": [
+    {
+      "name": "Southeast Asia",
+      "keywords": ["Vietnam", "Indonesia", "Philippines", "Thailand", "ASEAN", "Southeast Asia"],
+      "why_relevant": "Explain why this geography matters to you"
+    },
+    {
+      "name": "US Midwest",
+      "keywords": ["Ohio", "Michigan", "Indiana", "Illinois", "Great Lakes", "Rust Belt", "reshoring"],
+      "why_relevant": "Explain why this geography matters to you"
+    }
+  ],
+
+  "people": [
+    {
+      "name": "Person Name",
+      "role": "Their role or why they matter",
+      "keywords": ["their name", "their company", "their fund"],
+      "why_relevant": "Why you track this person"
+    }
+  ],
+
+  "industries_sectors": [
+    {
+      "name": "Advanced Manufacturing",
+      "keywords": ["reshoring", "onshoring", "factory automation", "industrial robotics", "CNC", "additive manufacturing", "3D printing", "precision machining"],
+      "why_relevant": "Core investment thesis area"
+    },
+    {
+      "name": "Defense Technology",
+      "keywords": ["DoD", "DARPA", "defense procurement", "dual-use", "ITAR", "national security", "Pentagon budget", "defense contractor"],
+      "why_relevant": "Portfolio exposure in defense-adjacent companies"
+    }
+  ],
+
+  "themes": [
+    {
+      "name": "Deglobalization",
+      "keywords": ["supply chain", "decoupling", "friend-shoring", "tariff", "trade war", "domestic production", "made in USA"],
+      "why_relevant": "Macro thesis underlying multiple investments"
+    },
+    {
+      "name": "AI Infrastructure",
+      "keywords": ["GPU", "data center", "inference", "training compute", "NVIDIA", "AI hardware", "cloud infrastructure"],
+      "why_relevant": "Crosscutting theme affecting multiple portfolio companies"
+    }
+  ],
+
+  "priority_sources": [
+    "bloomberg.com",
+    "ft.com",
+    "wsj.com",
+    "semafor.com"
+  ],
+
+  "priority_authors": [
+    "Author Name 1",
+    "Author Name 2"
+  ],
+
+  "excluded_topics": [
+    "_note: Topics to explicitly de-prioritize or skip",
+    "celebrity news",
+    "sports"
+  ]
+}

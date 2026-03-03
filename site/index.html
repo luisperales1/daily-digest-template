@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Digest Archive</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-wrapper">
+      <div class="site-brand">
+        <a href="/" id="siteTitle">Daily Digest</a>
+        <span class="site-tagline" id="siteTagline">Your personalized daily intelligence</span>
+      </div>
+      <nav class="site-nav">
+        <a href="/" class="active">Archive</a>
+        <a href="/about.html">About</a>
+        <a href="#subscribe">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-wrapper">
+
+    <!-- Search -->
+    <div class="search-container">
+      <div class="search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search digests by keyword, theme, or date..." autocomplete="off">
+      </div>
+      <div class="search-meta" id="searchMeta"></div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs" id="filterTabs">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="daily">Daily</button>
+      <button class="filter-tab" data-filter="weekly">Weekly</button>
+    </div>
+
+    <!-- Digest Listing -->
+    <div class="digest-list" id="digestList">
+      <div class="loading">Loading digests...</div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination" style="display:none;">
+      <button id="prevPage">Previous</button>
+      <span class="page-info" id="pageInfo"></span>
+      <button id="nextPage">Next</button>
+    </div>
+
+  </main>
+
+  <section class="subscribe-section" id="subscribe">
+    <div class="site-wrapper">
+      <div class="subscribe-box">
+        <h2 class="subscribe-heading">Subscribe</h2>
+        <p class="subscribe-description">Get the daily digest delivered to your inbox.</p>
+        <form name="subscribe" method="POST" data-netlify="true" class="subscribe-form" id="subscribeForm">
+          <input type="hidden" name="form-name" value="subscribe">
+          <div class="subscribe-input-group">
+            <input type="email" name="email" required placeholder="you@example.com" class="subscribe-input" id="subscribeEmail">
+            <button type="submit" class="subscribe-button">Subscribe</button>
+          </div>
+          <p class="subscribe-success" id="subscribeSuccess" style="display:none;">Thanks! You'll receive the next digest.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-wrapper">
+      <p>Daily Digest Archive &middot; Powered by <a href="https://read.readwise.io">Readwise Reader</a> &amp; <a href="https://anthropic.com">Claude</a></p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>
